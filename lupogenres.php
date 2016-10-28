@@ -102,11 +102,11 @@ class plgSearchLupogenres extends JPlugin
 						, a.id AS slug
 						, 0 AS catslug
 						, CONCAT((SELECT
-									  COUNT(jom_lupo_game_genre.id) AS nbr_genre
+									  COUNT(#__lupo_game_genre.id) AS nbr_genre
 									FROM
-									  jom_lupo_game_genre
-									  LEFT JOIN jom_lupo_genres ON (jom_lupo_genres.id = jom_lupo_game_genre.genreid)
-									WHERE jom_lupo_game_genre.genreid = a.id) ," Spiele des Genres ", genre, " gefunden") as text
+									  #__lupo_game_genre
+									  LEFT JOIN #__lupo_genres ON (#__lupo_genres.id = #__lupo_game_genre.genreid)
+									WHERE #__lupo_game_genre.genreid = a.id) ," Spiele des Genres ", genre, " gefunden") as text
 						, "'.$section.'" AS section
 						, "2" AS browsernav');
 		$query->from('#__lupo_genres AS a');
