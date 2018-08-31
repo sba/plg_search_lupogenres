@@ -83,8 +83,8 @@ class plgSearchLupogenres extends JPlugin
 		$section = JText::_('PLG_SEARCH_LUPOGENRES_GENRES');
 
 
-		//search for any words
-		$words = explode(' ', $text);
+		//search for exact search-phrase
+		$words = array($text);
 		$wheres = array();
 		foreach ($words as $word)
 		{
