@@ -1,5 +1,8 @@
 # Changelog
 
+### 3.8.0 (October xx, 2018)
+  - Version sync
+
 ### 3.X.X (2018)
   - Search for exact phrase 
 
