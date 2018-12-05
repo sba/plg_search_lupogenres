@@ -98,6 +98,7 @@ class plgSearchLupogenres extends JPlugin
 		$query	= $db->getQuery(true);
 		$query->select('a.id
 						, genre as title
+						, alias
 						, "" AS created
 						, a.id AS slug
 						, 0 AS catslug
@@ -109,6 +110,7 @@ class plgSearchLupogenres extends JPlugin
 									WHERE #__lupo_game_genre.genreid = a.id) ," Spiele des Genres ", genre, " gefunden") as text
 						, "'.$section.'" AS section
 						, "2" AS browsernav');
+		//TODO: tranlate language-strings in query
 		$query->from('#__lupo_genres AS a');
 		$query->where($where);
 		$query->order('genre');
@@ -137,7 +139,7 @@ class plgSearchLupogenres extends JPlugin
 /*                if ($request_type == 'json'){
                     $rows[$key]->text = $row->cat_agecat;
                 }*/
-				$rows[$key]->href = 'index.php?option=com_lupo&view=genre&id='.$row->id.$itemid;
+				$rows[$key]->href = 'index.php?option=com_lupo&view=genre&id='.$row->alias.$itemid;
 
 				$rows[$key]->image = false;
 			}
