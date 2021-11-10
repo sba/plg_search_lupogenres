@@ -106,7 +106,7 @@ class plgSearchLupogenres extends JPlugin {
 									WHERE #__lupo_game_genre.genreid = a.id) ," Spiele des Genres ", genre, " gefunden") as text
 						, "' . $section . '" AS section
 						, "2" AS browsernav');
-		//TODO: tranlate language-strings in query
+		//TODO: translate language-strings in query
 		$query->from('#__lupo_genres AS a');
 		$query->where($where);
 		$query->order('genre');
